@@ -70,13 +70,9 @@ namespace Fallstudie_1
             var inc = posR % 2 == 0 ? -1 : 1;
             var posC = (int)el_player.GetValue(Grid.ColumnProperty) + inc;
 
-            if (inc == 1 && posC > boardSize - 1)
+            if (posC < 0 || posC > boardSize - 1)
             {
-                posC -= 1;
-                posR -= 1;
-            }else if (inc == -1 && posC < 0)
-            {
-                posC = 0;
+                posC -= inc;
                 posR -= 1;
             }
 
