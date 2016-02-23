@@ -5,10 +5,14 @@
     xmlns:local="using:Fallstudie_1"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Loaded="Page_Loaded">
 
     <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid Name="g_board" Height="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource Mode=Self}}"></Grid>
-        <StackPanel></StackPanel>
+        <Grid Name="g_board" Height="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource Mode=Self}}">
+            <Ellipse Name="el_player" Width="25" Height="25" Fill="Black"></Ellipse>
+        </Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Name="b_dice" Content="DICE!" Click="b_dice_Click"></Button>
+        </StackPanel>
     </StackPanel>
 </Page>

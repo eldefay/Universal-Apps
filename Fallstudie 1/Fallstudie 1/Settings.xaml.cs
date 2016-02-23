@@ -37,15 +37,8 @@ namespace Fallstudie_1
         {
             cbx_boardSize.ItemsSource = new List<int> { 8, 9, 10 };
 
-            try
-            {
-                cbx_boardSize.SelectedItem = Windows.Storage.ApplicationData.Current.RoamingSettings.Values["boardSize"];
-            }
-            catch (Exception)
-            {
-                cbx_boardSize.SelectedIndex = 2;
-            }
-            
+            cbx_boardSize.SelectedItem = Windows.Storage.ApplicationData.Current.RoamingSettings.Values["boardSize"];
+
         }
     }
 }

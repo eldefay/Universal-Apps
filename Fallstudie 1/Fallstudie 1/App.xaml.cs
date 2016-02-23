@@ -43,6 +43,11 @@ namespace Fallstudie_1
         /// <param name="e">Details über Startanforderung und -prozess.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            if (Windows.Storage.ApplicationData.Current.RoamingSettings.Values["boardSize"] == null)
+            {
+                Windows.Storage.ApplicationData.Current.RoamingSettings.Values["boardSize"] = 10;
+            }
+            
 
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
