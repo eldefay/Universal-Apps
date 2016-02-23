@@ -13,28 +13,18 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// Die Vorlage "Leere Seite" ist unter http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 dokumentiert.
+// Die Elementvorlage "Leere Seite" ist unter http://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
 
 namespace Fallstudie_1
 {
     /// <summary>
     /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class Board : Page
     {
-        public MainPage()
+        public Board()
         {
             this.InitializeComponent();
-        }
-
-        private void b_newGame(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Board));
-        }
-
-        private void b_settings(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Settings));
         }
     }
 }

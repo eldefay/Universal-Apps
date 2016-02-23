@@ -8,6 +8,12 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <StackPanel HorizontalAlignment="Center">
+            <TextBlock x:Uid="tbl_appName" FontSize="26.667"/>
+            <Button x:Uid="b_newGame" Click="b_newGame"/>
+            <Button x:Uid="b_contGame"/>
+            <Button x:Uid="b_highscore"/>
+            <Button x:Uid="b_settings" Click="b_settings"/>
+        </StackPanel>
     </Grid>
 </Page>
