@@ -75,6 +75,8 @@ namespace Fallstudie_1
             string str = "\\u268" + dice;
             b_dice.Content = System.Text.RegularExpressions.Regex.Unescape(str);
 
+            var currentC = (int)el_player.GetValue(Grid.ColumnProperty);
+
             for (int i = 0; i <= dice; i++)
             {
                 var posR = (int)el_player.GetValue(Grid.RowProperty);
@@ -90,6 +92,10 @@ namespace Fallstudie_1
                 {
                     el_player.SetValue(Grid.ColumnProperty, posC);
                     el_player.SetValue(Grid.RowProperty, posR);
+                }
+                else
+                {
+                    el_player.SetValue(Grid.ColumnProperty, currentC);
                 }
             }
             
