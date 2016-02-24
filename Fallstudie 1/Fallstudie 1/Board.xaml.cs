@@ -33,9 +33,7 @@ namespace Fallstudie_1
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            g_board.Width = g_board.Height = ActualWidth;
-
-            
+            g_board.Width = g_board.Height = ActualWidth;            
 
             for (int i = 0; i < boardSize; i++)
             {
@@ -60,24 +58,41 @@ namespace Fallstudie_1
                     rect.SetValue(Grid.RowProperty, i);
                 }
             }
+
             el_player.SetValue(Canvas.ZIndexProperty, 1000);
             el_player.SetValue(Grid.RowProperty, boardSize-1);
+
+            Random rnd = new Random();
+            int numb = rnd.Next(0, 6);
+            string str = "\\u268"+numb;
+            b_dice.Content = System.Text.RegularExpressions.Regex.Unescape(str);
         }
 
         private void b_dice_Click(object sender, RoutedEventArgs e)
         {
-            var posR = (int)el_player.GetValue(Grid.RowProperty);
-            var inc = posR % 2 == 0 ? -1 : 1;
-            var posC = (int)el_player.GetValue(Grid.ColumnProperty) + inc;
+            Random rnd = new Random();
+            int dice = rnd.Next(0, 6);
+            string str = "\\u268" + dice;
+            b_dice.Content = System.Text.RegularExpressions.Regex.Unescape(str);
 
-            if (posC < 0 || posC > boardSize - 1)
+            for (int i = 0; i <= dice; i++)
             {
-                posC -= inc;
-                posR -= 1;
-            }
+                var posR = (int)el_player.GetValue(Grid.RowProperty);
+                var inc = posR % 2 == 0 ? -1 : 1;
+                var posC = (int)el_player.GetValue(Grid.ColumnProperty) + inc;
 
-            el_player.SetValue(Grid.ColumnProperty, posC);
-            el_player.SetValue(Grid.RowProperty, posR);
+                if (posC < 0 || posC > boardSize - 1)
+                {
+                    posC -= inc;
+                    posR -= 1;
+                }
+                if (posR >= 0)
+                {
+                    el_player.SetValue(Grid.ColumnProperty, posC);
+                    el_player.SetValue(Grid.RowProperty, posR);
+                }
+            }
+            
         }
     }
 }

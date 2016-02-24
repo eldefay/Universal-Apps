@@ -12,7 +12,7 @@
             <Ellipse Name="el_player" Width="25" Height="25" Fill="Black"></Ellipse>
         </Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Name="b_dice" Content="DICE!" Click="b_dice_Click"></Button>
+            <Button Name="b_dice" Click="b_dice_Click" Height="175" Width="175" FontSize="100"></Button>
         </StackPanel>
     </StackPanel>
 </Page>
