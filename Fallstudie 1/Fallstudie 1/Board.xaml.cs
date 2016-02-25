@@ -156,6 +156,7 @@ namespace Fallstudie_1
                 timer.Stop();
                 if (toFinish > 0)
                 {
+                    uc_question.Visibility = Visibility.Visible;
                     b_dice.IsEnabled = true;
                 }
                 else
