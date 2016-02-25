@@ -7,12 +7,33 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Loaded="Page_Loaded">
 
-    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid Name="g_board" Height="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource Mode=Self}}">
-            <Ellipse Name="el_player" Width="25" Height="25" Fill="Black"></Ellipse>
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState x:Name="portrait">
+                <VisualState.StateTriggers>
+                    <AdaptiveTrigger MinWindowWidth="0"/>
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Target="sp_game.Orientation" Value="Vertical"/>
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState x:Name="landscape">
+                <VisualState.StateTriggers>
+                    <AdaptiveTrigger MinWindowWidth="500"/>
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Target="sp_game.Orientation" Value="Horizontal"/>
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+
+    <StackPanel Name="sp_game" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Name="g_board">
+            <Ellipse Name="el_player" Stroke="{ThemeResource ApplicationPageBackgroundThemeBrush}" Fill="#C7F464"></Ellipse>
         </Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Name="b_dice" Click="b_dice_Click" Height="175" Width="175" FontSize="100"></Button>
+        <StackPanel Name="sp_menu" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Name="b_dice" Click="b_dice_Click" Height="150" Width="150" FontSize="100" BorderThickness="0" Background="{x:Null}"></Button>
         </StackPanel>
     </StackPanel>
 </Page>

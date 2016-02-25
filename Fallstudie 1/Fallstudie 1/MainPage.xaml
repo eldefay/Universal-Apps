@@ -7,13 +7,21 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <Style TargetType="Button" x:Key="menuButton">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="200"/>
+        </Style>
+    </Page.Resources>
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel HorizontalAlignment="Center">
-            <TextBlock x:Uid="tbl_appName" FontSize="26.667"/>
-            <Button x:Uid="b_newGame" Click="b_newGame"/>
-            <Button x:Uid="b_contGame"/>
-            <Button x:Uid="b_highscore"/>
-            <Button x:Uid="b_settings" Click="b_settings"/>
+            <TextBlock x:Uid="tbl_appName" FontSize="64" Foreground="#FF556270"/>
+            <Button x:Uid="b_newGame" Click="b_newGame"  Style="{StaticResource menuButton}"/>
+            <Button x:Uid="b_contGame" Style="{StaticResource menuButton}"/>
+            <Button x:Uid="b_highscore" Style="{StaticResource menuButton}"/>
+            <Button x:Uid="b_settings" Click="b_settings" Style="{StaticResource menuButton}"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -24,16 +24,33 @@ namespace Fallstudie_1
     /// </summary>
     public sealed partial class Board : Page
     {
+        DispatcherTimer timer = new DispatcherTimer();
+        DispatcherTimer rollDice = new DispatcherTimer();   
+        int dice;
+        bool rolling = false;
+
         public Board()
         {
             this.InitializeComponent();
+            timer.Interval = TimeSpan.FromMilliseconds(250);
+            timer.Tick += MovePlayer_Tick;
+
+            rollDice.Interval = TimeSpan.FromMilliseconds(25);
+            rollDice.Tick += RollDice_Tick;
         }
 
         int boardSize = (int)Windows.Storage.ApplicationData.Current.RoamingSettings.Values["boardSize"];
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            g_board.Width = g_board.Height = ActualWidth;            
+            var boardScale = ActualWidth;
+
+            if (ActualWidth > ActualHeight)
+            {
+                boardScale = ActualHeight;
+            }
+
+            g_board.Width = g_board.Height = boardScale;
 
             for (int i = 0; i < boardSize; i++)
             {
@@ -41,16 +58,27 @@ namespace Fallstudie_1
                 g_board.RowDefinitions.Add(new RowDefinition());
             }
 
+
             for (int i = 0; i < boardSize; i++)
             {
                 for (int j = 0; j < boardSize; j++)
                 {
                     Rectangle rect = new Rectangle();
-                    Random rand = new Random(Guid.NewGuid().ToString().GetHashCode()); ;
-                    byte[] colorBytes = new byte[3];
-                    rand.NextBytes(colorBytes);
-                    Color randomColor = Color.FromArgb(255, colorBytes[0], colorBytes[1], colorBytes[2]);
-                    rect.Fill = new SolidColorBrush(randomColor);
+                    //Random rand = new Random(Guid.NewGuid().ToString().GetHashCode()); ;
+                    //byte[] colorBytes = new byte[3];
+                    //rand.NextBytes(colorBytes);
+                    //Color randomColor = Color.FromArgb(255, colorBytes[0], colorBytes[1], colorBytes[2]);
+                    //rect.Fill = new SolidColorBrush(randomColor);
+
+                    Color rectColor = Color.FromArgb(255, 78, 205, 196);
+
+                    if ((j % 2 == 0 && i % 2 == 0) || (j % 2 != 0 && i % 2 != 0))
+                    {
+                        rectColor = Color.FromArgb(255, 255, 107, 107);
+                    }
+
+                    rect.Fill = new SolidColorBrush(rectColor);
+                    rect.Stroke = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0)); ;
 
                     g_board.Children.Add(rect);
 
@@ -59,28 +87,47 @@ namespace Fallstudie_1
                 }
             }
 
+            el_player.Width = el_player.Height = boardScale/boardSize * 0.75;
             el_player.SetValue(Canvas.ZIndexProperty, 1000);
-            el_player.SetValue(Grid.RowProperty, boardSize-1);
+            el_player.SetValue(Grid.RowProperty, boardSize - 1);
 
             Random rnd = new Random();
             int numb = rnd.Next(0, 6);
-            string str = "\\u268"+numb;
+            string str = "\\u268" + numb;
             b_dice.Content = System.Text.RegularExpressions.Regex.Unescape(str);
         }
 
         private void b_dice_Click(object sender, RoutedEventArgs e)
         {
+            if (rolling)
+            {
+                rollDice.Stop();
+                rolling = false;
+                b_dice.IsEnabled = false;
+                timer.Start();
+            }
+            else
+            {
+                rolling = true;
+                rollDice.Start();
+            }
+            
+        }
+
+        private void RollDice_Tick(object sender, object e)
+        {
             Random rnd = new Random();
-            int dice = rnd.Next(0, 6);
-            string str = "\\u268" + dice;
+            dice = rnd.Next(1, 7);
+            string str = "\\u268" + (dice - 1);
             b_dice.Content = System.Text.RegularExpressions.Regex.Unescape(str);
+        }
 
-            var currentC = (int)el_player.GetValue(Grid.ColumnProperty);
-
-            for (int i = 0; i <= dice; i++)
+        private void MovePlayer_Tick(object sender, object e)
+        {
+            if(dice > 0)
             {
                 var posR = (int)el_player.GetValue(Grid.RowProperty);
-                var inc = posR % 2 == 0 ? -1 : 1;
+                var inc = (boardSize - posR) % 2 == 0 ? -1 : 1;
                 var posC = (int)el_player.GetValue(Grid.ColumnProperty) + inc;
 
                 if (posC < 0 || posC > boardSize - 1)
@@ -93,10 +140,13 @@ namespace Fallstudie_1
                     el_player.SetValue(Grid.ColumnProperty, posC);
                     el_player.SetValue(Grid.RowProperty, posR);
                 }
-                else
-                {
-                    el_player.SetValue(Grid.ColumnProperty, currentC);
-                }
+
+                dice--;
+            }
+            else
+            {
+                timer.Stop();
+                b_dice.IsEnabled = true;
             }
             
         }
