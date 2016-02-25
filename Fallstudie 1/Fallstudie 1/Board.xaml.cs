@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -24,25 +25,27 @@ namespace Fallstudie_1
     /// </summary>
     public sealed partial class Board : Page
     {
+        int boardSize = (int)Windows.Storage.ApplicationData.Current.RoamingSettings.Values["boardSize"];
         DispatcherTimer timer = new DispatcherTimer();
         DispatcherTimer rollDice = new DispatcherTimer();   
         int dice;
         bool rolling = false;
+        int toFinish;
 
         public Board()
         {
             this.InitializeComponent();
-            timer.Interval = TimeSpan.FromMilliseconds(250);
+            timer.Interval = TimeSpan.FromMilliseconds(50);
             timer.Tick += MovePlayer_Tick;
 
             rollDice.Interval = TimeSpan.FromMilliseconds(25);
             rollDice.Tick += RollDice_Tick;
         }
 
-        int boardSize = (int)Windows.Storage.ApplicationData.Current.RoamingSettings.Values["boardSize"];
-
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            toFinish = boardSize * boardSize - 1;
+
             var boardScale = ActualWidth;
 
             if (ActualWidth > ActualHeight)
@@ -103,8 +106,13 @@ namespace Fallstudie_1
             {
                 rollDice.Stop();
                 rolling = false;
-                b_dice.IsEnabled = false;
-                timer.Start();
+                
+
+                if(toFinish >= dice)
+                {
+                    b_dice.IsEnabled = false;
+                    timer.Start();
+                }                
             }
             else
             {
@@ -122,7 +130,7 @@ namespace Fallstudie_1
             b_dice.Content = System.Text.RegularExpressions.Regex.Unescape(str);
         }
 
-        private void MovePlayer_Tick(object sender, object e)
+        private async void MovePlayer_Tick(object sender, object e)
         {
             if(dice > 0)
             {
@@ -140,13 +148,21 @@ namespace Fallstudie_1
                     el_player.SetValue(Grid.ColumnProperty, posC);
                     el_player.SetValue(Grid.RowProperty, posR);
                 }
-
+                toFinish--;
                 dice--;
             }
             else
             {
                 timer.Stop();
-                b_dice.IsEnabled = true;
+                if (toFinish > 0)
+                {
+                    b_dice.IsEnabled = true;
+                }
+                else
+                {
+                    MessageDialog winMessage = new MessageDialog("Win!");
+                    await winMessage.ShowAsync();
+                }
             }
             
         }
