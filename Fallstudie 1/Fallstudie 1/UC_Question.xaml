@@ -9,7 +9,16 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <Grid>
-        <TextBlock Text="QUESTION!"></TextBlock>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <TextBlock FontSize="18.667" Margin="5" Text="{Binding qText}"/>
+            <ListBox Name="lb_awnsers" Margin="5" Tapped="answers_Tapped" ItemsSource="{Binding aList}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding text}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>        
     </Grid>
 </UserControl>

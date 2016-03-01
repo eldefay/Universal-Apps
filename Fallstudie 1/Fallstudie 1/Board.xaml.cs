@@ -31,6 +31,8 @@ namespace Fallstudie_1
         int dice;
         bool rolling = false;
         int toFinish;
+        Random rnd = new Random();
+        
 
         public Board()
         {
@@ -124,7 +126,6 @@ namespace Fallstudie_1
 
         private void RollDice_Tick(object sender, object e)
         {
-            Random rnd = new Random();
             dice = rnd.Next(1, 7);
             string str = "\\u268" + (dice - 1);
             b_dice.Content = System.Text.RegularExpressions.Regex.Unescape(str);
@@ -156,8 +157,12 @@ namespace Fallstudie_1
                 timer.Stop();
                 if (toFinish > 0)
                 {
-                    uc_question.Visibility = Visibility.Visible;
                     b_dice.IsEnabled = true;
+                    if (rnd.Next(100) < 66)
+                    {
+                        var question = getQuestion();
+                        askQuestion(question);
+                    }
                 }
                 else
                 {
@@ -166,6 +171,31 @@ namespace Fallstudie_1
                 }
             }
             
+        }
+
+        private void askQuestion(Question_UC question)
+        {
+            sp_menu.IsHitTestVisible = false;
+            uc_question.Visibility = Visibility.Visible;
+
+            uc_question.DataContext = question;
+        }
+
+        private Question_UC getQuestion()
+        {
+            var question = new Question_UC();
+            var questionR = App._rQuestion[rnd.Next(App._rQuestion.Count)];
+            question.id = questionR._id;
+            question.qText = questionR.qText;
+            question.aList = new List<Awnser>();
+            question.aList.Add(new Awnser { right = true, text = questionR.qA1 });
+            question.aList.Add(new Awnser { right = false, text = questionR.qA2 });
+            question.aList.Add(new Awnser { right = false, text = questionR.qA3 });
+            question.aList.Add(new Awnser { right = false, text = questionR.qA4 });
+
+            question.aList.OrderBy(a => rnd.Next());
+
+            return question;
         }
     }
 }

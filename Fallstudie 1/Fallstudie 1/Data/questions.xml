@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ArrayOfQuestion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Question>
+		<id>1</id>
+		<qText>Was bedeuten die berühmten Worte von Julius Caesar "Alea iacta est"?</qText>
+		<qA1>Der Würfel ist geqAllen.</qA1>
+		<qA2>Die Entscheidung ist getroffen.</qA2>
+		<qA3>Das ist mein Urteil.</qA3>
+		<qA4>So soll es sein.</qA4>
+	</Question>
+	<Question>
+		<id>2</id>
+		<qText>Von wem stammt das Gemälde der Mona Lisa?</qText>
+		<qA1>Leonardo da Vinci</qA1>
+		<qA2>Picasso</qA2>
+		<qA3>van Gogh</qA3>
+		<qA4>Monet</qA4>
+	</Question>
+	<Question>
+		<id>3</id>
+		<qText>Für was steht die Abkürzung "GmbH"?</qText>
+		<qA1>Gesellschaft mit beschränkter Haftung</qA1>
+		<qA2>Gesellschaft mit bekannter Haftung</qA2>
+		<qA3>Geschäft mit beschränkter Haftung</qA3>
+		<qA4>Gesellschafter mit beschränkter Haftung</qA4>
+	</Question>
+	<Question>
+		<id>4</id>
+		<qText>Welche Stadt benutzt das Autokennzeichen "FF"?</qText>
+		<qA1>Frankfurt an der Oder</qA1>
+		<qA2>Fridingen am Fluß</qA2>
+		<qA3>Flensburg</qA3>
+		<qA4>Frankenberg</qA4>
+	</Question>
+	<Question>
+		<id>5</id>
+		<qText>Wie heißt Indiens Hauptstadt?</qText>
+		<qA1>Neu-Delhi</qA1>
+		<qA2>Mumbai</qA2>
+		<qA3>Peking</qA3>
+		<qA4>Bangkok</qA4>
+	</Question>
+	<Question>
+		<id>6</id>
+		<qText>Wie lautete der frühere Name Istanbul?</qText>
+		<qA1>Konstantinopel</qA1>
+		<qA2>Metropolis</qA2>
+		<qA3>Delphi</qA3>
+		<qA4>Herat</qA4>
+	</Question>
+	<Question>
+		<id>7</id>
+		<qText>Wie hieß der erste deutsche Bundeskanzler?</qText>
+		<qA1>Konrad Adenauer</qA1>
+		<qA2>Ludwig Erhard</qA2>
+		<qA3>Willy Brandt</qA3>
+		<qA4>Helmut Schmidt</qA4>
+	</Question>
+	<Question>
+		<id>8</id>
+		<qText>Wie heißt der „Zeichentrickfilm-EleqAnt“ mit den großen Ohren?</qText>
+		<qA1>Dumbo</qA1>
+		<qA2>Balu</qA2>
+		<qA3>Winnie Puuh</qA3>
+		<qA4>Bambi</qA4>
+	</Question>
+	<Question>
+		<id>9</id>
+		<qText>Welcher Schauspieler schaffte es in den USA bis zur Präsidentschaft?</qText>
+		<qA1>Ronald Reagan</qA1>
+		<qA2>Bill Clinton</qA2>
+		<qA3>John Wayne</qA3>
+		<qA4>Clint Eastwood</qA4>
+	</Question>
+	<Question>
+		<id>10</id>
+		<qText>Welches Sternzeichen hat jemand, der am 15. Mai geboren wurde?</qText>
+		<qA1>Stier</qA1>
+		<qA2>Waage</qA2>
+		<qA3>Zwilling</qA3>
+		<qA4>Löwe</qA4>
+	</Question>
+	<Question>
+		<id>11</id>
+		<qText>Wer schrie den Roman „Moby Dick“?</qText>
+		<qA1>Herman Melvilles</qA1>
+		<qA2>William Shakespeare</qA2>
+		<qA3>Charles Dickens</qA3>
+		<qA4>John Milton</qA4>
+	</Question>
+	<Question>
+		<id>12</id>
+		<qText>Wie nennt sich die Währung in Russland?</qText>
+		<qA1>Rubel</qA1>
+		<qA2>Kronen</qA2>
+		<qA3>Zloty</qA3>
+		<qA4>Euro</qA4>
+	</Question>
+	<Question>
+		<id>13</id>
+		<qText>Von welcher Band stammt das bekannte Lied "Let it be" (1970)?</qText>
+		<qA1>The Beatles</qA1>
+		<qA2>Rolling Stones</qA2>
+		<qA3>ABBA</qA3>
+		<qA4>Boney M.</qA4>
+	</Question>
+	<Question>
+		<id>14</id>
+		<qText>Wer wurde auch als "Eiserne Lady" bezeichnet?</qText>
+		<qA1>Margaret Thatcher</qA1>
+		<qA2>Queen Elisabeth I</qA2>
+		<qA3>Heilige Barbara</qA3>
+		<qA4>Rosa Luxemburg</qA4>
+	</Question>
+	<Question>
+		<id>15</id>
+		<qText>Welcher dieser vier Berge, ist der höchste Berg?</qText>
+		<qA1>Der Montblanc</qA1>
+		<qA2>Die Zugspitze</qA2>
+		<qA3>Das Matterhorn</qA3>
+		<qA4>Der Ätna</qA4>
+	</Question>
+	<Question>
+		<id>16</id>
+		<qText>Wer erqAnd den Heißluftballon?</qText>
+		<qA1>Gebrüder Montgolfier</qA1>
+		<qA2>Carl von Linné</qA2>
+		<qA3>Benjamin Franklin</qA3>
+		<qA4>James Watt</qA4>
+	</Question>
+	<Question>
+		<id>17</id>
+		<qText>Ein Kubikmeter umqAsst wie viel Liter?</qText>
+		<qA1>1.000 Liter</qA1>
+		<qA2>100 Liter</qA2>
+		<qA3>2500 Liter</qA3>
+		<qA4>10000 Liter</qA4>
+	</Question>
+	<Question>
+		<id>18</id>
+		<qText>Was ist das Burj KhaliqA in Dubai?</qText>
+		<qA1>Ein sehr hohes Gebäude</qA1>
+		<qA2>Ein sehr edler Palast</qA2>
+		<qA3>Eine bekannte Bucht</qA3>
+		<qA4>Der Flughafen</qA4>
+	</Question>
+	<Question>
+		<id>19</id>
+		<qText>Welcher Fluss ist der längste der Welt?</qText>
+		<qA1>Der Nil</qA1>
+		<qA2>Mississippi</qA2>
+		<qA3>Rhein</qA3>
+		<qA4>Kongo</qA4>
+	</Question>
+	<Question>
+		<id>20</id>
+		<qText>Aus welcher Stadt kommen die Beatles?</qText>
+		<qA1>Liverpool</qA1>
+		<qA2>London</qA2>
+		<qA3>Dublin</qA3>
+		<qA4>Glasgow</qA4>
+	</Question>
+	<Question>
+		<id>21</id>
+		<qText>Aus wie vielen Bundesländern besteht Deutschland?</qText>
+		<qA1>16</qA1>
+		<qA2>15</qA2>
+		<qA3>14</qA3>
+		<qA4>12</qA4>
+	</Question>
+	<Question>
+		<id>22</id>
+		<qText>Welches Gebirge teilt Europa und Asien?</qText>
+		<qA1>Ural</qA1>
+		<qA2>Alpen</qA2>
+		<qA3>Zagros</qA3>
+		<qA4>Karpaten</qA4>
+	</Question>
+	<Question>
+		<id>23</id>
+		<qText>Wie hieß der erste Hund im Weltall?</qText>
+		<qA1>Laika</qA1>
+		<qA2>Kira</qA2>
+		<qA3>Lusi</qA3>
+		<qA4>Nona</qA4>
+	</Question>
+	<Question>
+		<id>24</id>
+		<qText>Wer erqAnd die Jeans?</qText>
+		<qA1>Levi Strauss</qA1>
+		<qA2>Tom Wrangler</qA2>
+		<qA3>Peter Diesel</qA3>
+		<qA4>Tim Mustang</qA4>
+	</Question>
+	<Question>
+		<id>25</id>
+		<qText>Wie viele Zentimeter ergeben ein Yard?</qText>
+		<qA1>ca. 91 cm</qA1>
+		<qA2>ca. 8 cm</qA2>
+		<qA3>ca 102 cm</qA3>
+		<qA4>ca. 45 cm</qA4>
+	</Question>
+	<Question>
+		<id>26</id>
+		<qText>Wenn das Wetter gut ist, wird der Bauer bestimmt den Eber, das Ferkel und...?</qText>
+		<qA1>… die Sau rauslassen</qA1>
+		<qA2>…einen draufmachen</qA2>
+		<qA3>…die Nacht durchzehren</qA3>
+		<qA4>… auf die Kacke hauen</qA4>
+	</Question>
+	<Question>
+		<id>27</id>
+		<qText>Wer is der Sohn von Cairne Bluthuf?</qText>
+		<qA1>Baine Bluthuf</qA1>
+		<qA2>Sairne Bluthuf</qA2>
+		<qA3>Raine Bluthuf</qA3>
+		<qA4>qAirne Bluthuf</qA4>
+	</Question>
+	<Question>
+		<id>28</id>
+		<qText>Wobei gibt es keine geregelten Öffnungszeiten?</qText>
+		<qA1>Fensterläden</qA1>
+		<qA2>Baumärkte</qA2>
+		<qA3>Möbelhäuser</qA3>
+		<qA4>Teppichgeschäfte</qA4>
+	</Question>
+	<Question>
+		<id>29</id>
+		<qText>Was war bereits seit Mai 1969 ein beliebtes Zahlungsmittel im europäischen Raum?</qText>
+		<qA1>Eurocheques</qA1>
+		<qA2>Euronoten</qA2>
+		<qA3>Euroscheine</qA3>
+		<qA4>Euromünzen</qA4>
+	</Question>
+	<Question>
+		<id>30</id>
+		<qText>Welcher der folgenden ist der schnellste Internet-Zugang?</qText>
+		<qA1>FTTH</qA1>
+		<qA2>DSL</qA2>
+		<qA3>VDSL</qA3>
+		<qA4>Analoges Modem</qA4>
+	</Question>
+	<Question>
+		<id>31</id>
+		<qText>Was ist keine Schnittstelle für ein Mobiltelefon?</qText>
+		<qA1>RAM</qA1>
+		<qA2>Bluetooth</qA2>
+		<qA3>Infrarot</qA3>
+		<qA4>W-LAN</qA4>
+	</Question>
+	<Question>
+		<id>32</id>
+		<qText>Aus wievielen Sekunden besteht eine Stunde?</qText>
+		<qA1>3600</qA1>
+		<qA2>6000</qA2>
+		<qA3>600</qA3>
+		<qA4>2400</qA4>
+	</Question>
+	<Question>
+		<id>33</id>
+		<qText>Welches Zeichen stellt die römische Zahl 10 dar?</qText>
+		<qA1>X</qA1>
+		<qA2>V</qA2>
+		<qA3>P</qA3>
+		<qA4>L</qA4>
+	</Question>
+	<Question>
+		<id>34</id>
+		<qText>180 Grad ist die Summe aller Innenwinkel in einem...?</qText>
+		<qA1>Dreieck</qA1>
+		<qA2>Viereck</qA2>
+		<qA3>Fünfeck</qA3>
+		<qA4>Sechseck</qA4>
+	</Question>
+</ArrayOfQuestion>

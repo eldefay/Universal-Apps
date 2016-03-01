@@ -126,6 +126,9 @@
   <data name="b_newGame.Content" xml:space="preserve">
     <value>Neues Spiel</value>
   </data>
+  <data name="b_questionSubmit" xml:space="preserve">
+    <value>Bestätigen</value>
+  </data>
   <data name="b_settings.Content" xml:space="preserve">
     <value>Einstellungen</value>
   </data>

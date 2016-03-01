@@ -27,6 +27,9 @@ namespace Fallstudie_1
         /// Initialisiert das Singletonanwendungsobjekt.  Dies ist die erste Zeile von erstelltem Code
         /// und daher das logische Äquivalent von main() bzw. WinMain().
         /// </summary>
+
+        public static List<Question> _rQuestion;
+
         public App()
         {
             Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync(
@@ -41,8 +44,10 @@ namespace Fallstudie_1
         /// werden z. B. verwendet, wenn die Anwendung gestartet wird, um eine bestimmte Datei zu öffnen.
         /// </summary>
         /// <param name="e">Details über Startanforderung und -prozess.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected async override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            _rQuestion = await SaveLoad.readXmlFile<List<Question>>("questions");
+
             if (Windows.Storage.ApplicationData.Current.RoamingSettings.Values["boardSize"] == null)
             {
                 Windows.Storage.ApplicationData.Current.RoamingSettings.Values["boardSize"] = 10;

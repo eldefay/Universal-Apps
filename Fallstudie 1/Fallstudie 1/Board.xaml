@@ -28,8 +28,8 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
-        <StackPanel Name="sp_game" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <local:UC_Question x:Name="uc_question" Visibility="Collapsed"></local:UC_Question>
+        <local:UC_Question x:Name="uc_question" Visibility="Collapsed" Canvas.ZIndex="1200" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <StackPanel Name="sp_game" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">            
             <Grid Name="g_board">
                 <Ellipse Name="el_player" Stroke="{ThemeResource ApplicationPageBackgroundThemeBrush}" Fill="#C7F464"></Ellipse>
             </Grid>
