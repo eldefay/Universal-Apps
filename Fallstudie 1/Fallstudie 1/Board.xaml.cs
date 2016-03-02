@@ -32,6 +32,7 @@ namespace Fallstudie_1
         bool rolling = false;
         int toFinish;
         Random rnd = new Random();
+        int score = 0;
         
 
         public Board()
@@ -149,6 +150,7 @@ namespace Fallstudie_1
                     el_player.SetValue(Grid.ColumnProperty, posC);
                     el_player.SetValue(Grid.RowProperty, posR);
                 }
+                score++;
                 toFinish--;
                 dice--;
             }

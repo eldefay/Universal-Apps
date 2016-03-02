@@ -33,8 +33,9 @@
             <Grid Name="g_board">
                 <Ellipse Name="el_player" Stroke="{ThemeResource ApplicationPageBackgroundThemeBrush}" Fill="#C7F464"></Ellipse>
             </Grid>
-            <StackPanel Name="sp_menu" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Button Name="b_dice" Click="b_dice_Click" Height="150" Width="150" FontSize="100" BorderThickness="0" Background="{x:Null}"></Button>
+            <StackPanel Name="sp_menu" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <TextBlock Name="tbl_score" Text="{Binding score}" FontSize="16" HorizontalAlignment="Left"/>
+                <Button Name="b_dice" Click="b_dice_Click" Height="150" Width="150" FontSize="100" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}"/>
             </StackPanel>
         </StackPanel>
     </Grid>    
