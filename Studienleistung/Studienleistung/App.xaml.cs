@@ -22,6 +22,17 @@ namespace Studienleistung
     /// </summary>
     sealed partial class App : Application
     {
+        public static DispatcherTimer timer = new DispatcherTimer();
+        public static bool running = false;
+        public static Meeting meeting = new Meeting();
+        public static double rate = 20;
+        public static double cpm
+        {
+            get
+            {
+                return rate / 60 * meeting.participants;
+            }
+        }
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -33,6 +44,15 @@ namespace Studienleistung
                 Microsoft.ApplicationInsights.WindowsCollectors.Session);
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += Timer_Tick;
+
+        }
+
+        private void Timer_Tick(object sender, object e)
+        {
+            meeting.cost += rate / 3600 * meeting.participants;
+            meeting.elapsedTime += TimeSpan.FromSeconds(1);
         }
 
         /// <summary>

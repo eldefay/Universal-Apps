@@ -27,9 +27,45 @@ namespace Studienleistung
             this.InitializeComponent();
         }
 
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            sp_main.DataContext = App.meeting;
+            tbl_cpm.Text = App.cpm.ToString("C") + " per minute";
+        }
+
         private void ab_setting_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(SettingPage));
+        }
+
+        private void ab_remove_Click(object sender, RoutedEventArgs e)
+        {
+            if(App.meeting.participants > 1)
+            {
+                App.meeting.participants--;
+                tbl_cpm.Text = App.cpm.ToString("C") + " per minute";
+            }
+        }
+
+        private void ab_add_Click(object sender, RoutedEventArgs e)
+        {
+            App.meeting.participants++;
+            tbl_cpm.Text = App.cpm.ToString("C") + " per minute";
+        }
+
+        private void b_start_Click(object sender, RoutedEventArgs e)
+        {
+            if (App.running)
+            {
+                App.timer.Stop();
+                App.running = false;
+                Frame.Navigate(typeof(MeetingEndPage));
+            }
+            else
+            {
+                App.running = true;
+                App.timer.Start();
+            }
         }
     }
 }

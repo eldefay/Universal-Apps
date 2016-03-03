@@ -5,7 +5,7 @@
     xmlns:local="using:Studienleistung"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Loaded="Page_Loaded">
 
     <Page.Resources>
         <Style TargetType="TextBlock" x:Key="textStyle">
@@ -19,24 +19,24 @@
         <StackPanel>
             <Grid Background="#FF595643">
                 <AppBarButton Name="ab_setting" Icon="Setting" Height="48" Foreground="#FFEBE1C5" Click="ab_setting_Click"/>
-                <TextBlock Text="TIMESTEALER" VerticalAlignment="Center" Style="{StaticResource textStyle}"/>
+                <TextBlock Text="MONEYSTEALER" VerticalAlignment="Center" Style="{StaticResource textStyle}"/>
             </Grid>
-            <StackPanel Margin="0,25">
+            <StackPanel Name="sp_main" Margin="0,25">
                 <TextBlock Text="COST" Style="{StaticResource textStyle}"/>
-                <TextBlock Name="tbl_cost" Text="$0.00" Style="{StaticResource textStyle}" FontSize="32"/>
+                <TextBlock Name="tbl_cost" Text="{Binding cost}" Style="{StaticResource textStyle}" FontSize="32"/>
                 <Border BorderThickness="1" BorderBrush="#FFEBE1C5" Margin="0,25" Width="250"/>
                 <TextBlock Text="ELAPSED TIME" Style="{StaticResource textStyle}"/>
-                <TextBlock Name="tbl_time" Text="00:00:00" Style="{StaticResource textStyle}" FontSize="26.667"/>
+                <TextBlock Name="tbl_time" Text="{Binding elapsedTime}" Style="{StaticResource textStyle}" FontSize="26.667"/>
                 <StackPanel HorizontalAlignment="Center" Margin="0,25" Background="#33FFFFFF" Padding="10">
                     <TextBlock Text="PARTICIPANTS" Style="{StaticResource textStyle}"/>
                     <StackPanel Orientation="Horizontal" Height="49">
-                        <AppBarButton Icon="Remove" VerticalAlignment="Center" Foreground="#FFEBE1C5"/>
-                        <TextBlock Name="tbl_participants" Text="1" Style="{StaticResource textStyle}" VerticalAlignment="Center" FontSize="29.333" Width="60" Margin="0,5" TextAlignment="Center"/>
-                        <AppBarButton Icon="Add" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FFEBE1C5"/>
+                        <AppBarButton x:Name="ab_remove" Icon="Remove" VerticalAlignment="Center" Foreground="#FFEBE1C5" Click="ab_remove_Click"/>
+                        <TextBlock Name="tbl_participants" Text="{Binding participants}" Style="{StaticResource textStyle}" VerticalAlignment="Center" FontSize="29.333" Width="60" Margin="0,5" TextAlignment="Center"/>
+                        <AppBarButton x:Name="ab_add" Icon="Add" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FFEBE1C5" Click="ab_add_Click"/>
                     </StackPanel>
                 </StackPanel>
-                <Button Name="b_start" Content="START MEETING" HorizontalAlignment="Center" Foreground="#FFEBE1C5" Background="#FFED834E" Padding="25,10"/>
-                <TextBlock Name="tbl_cpm" Text="$0.33 per minute" Style="{StaticResource textStyle}" Margin="0,5"/>
+                <Button Name="b_start" Content="START MEETING" HorizontalAlignment="Center" Foreground="#FFEBE1C5" Background="#FFED834E" Padding="25,10" Click="b_start_Click"/>
+                <TextBlock Name="tbl_cpm" Style="{StaticResource textStyle}" Margin="0,5"/>
             </StackPanel>
         </StackPanel>
     </Grid>

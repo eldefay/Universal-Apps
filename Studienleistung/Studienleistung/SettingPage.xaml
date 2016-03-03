@@ -27,14 +27,14 @@
         <StackPanel>
             <Grid Background="#FF595643">
                 <AppBarButton Name="ab_back" Icon="Back" Height="48" Foreground="#FFEBE1C5" Click="ab_back_Click"/>
-                <TextBlock Text="TIMESTEALER" VerticalAlignment="Center" Style="{StaticResource textStyle}" FontSize="16"/>
+                <TextBlock Text="MONEYSTEALER" VerticalAlignment="Center" Style="{StaticResource textStyle}" FontSize="16"/>
             </Grid>
             <StackPanel Margin="0,25">
                 <TextBlock Text="Average hourly rate" Style="{StaticResource textStyle}"/>
-                <TextBox Name="tbl_rate" Text="$0.00" Style="{StaticResource boxStyle}" Width="176"/>
+                <TextBox Name="tbx_rate" Text="$0.00" Style="{StaticResource boxStyle}" Width="176"/>
                 <Border BorderThickness="1" BorderBrush="#FFEBE1C5" Margin="0,25" Width="250"/>
                 <TextBlock Text="Show alert on" Style="{StaticResource textStyle}"/>
-                <TextBox Name="tbl_time" Text="$700" Style="{StaticResource boxStyle}" Width="122"/>
+                <TextBox Name="tbx_alerz" Text="$700" Style="{StaticResource boxStyle}" Width="122"/>
                 <TextBlock Text="Let me know when my meeting cost passes this amount." Style="{StaticResource textStyle}" Width="215" TextWrapping="WrapWholeWords" FontSize="13" TextAlignment="Center"/>
                 <StackPanel HorizontalAlignment="Center" Margin="0,35" Background="#33FFFFFF" Width="275">
                     <TextBlock Text="STATS" Style="{StaticResource textStyle}" Margin="10"/>
